@@ -1,0 +1,274 @@
+body,
+html {
+  width: 100%;
+  height: 100%;
+  font-family: 'Poiret One', cursive;
+  background: linear-gradient(to right, rgb(140, 60, 186), rgb(240, 122, 123));
+} 
+
+
+.zone1{
+  display: grid;
+  place-content: center;
+}
+
+h1{
+  font-size: 3.5rem;
+  font-family: "Sofia", sans-serif;
+  font-weight: 900;
+  color: #dfb622
+}
+
+
+.row {
+  display: grid;
+  grid-template-columns: 2fr 3fr 3fr;
+}
+.column1{
+  justify-self: start;
+  margin-left: 2em;
+}
+
+h2{
+  font-size: 2em;
+  font-weight: 900;
+  color: #dfb622;
+}
+
+h3{
+  font-size: 2em;
+  font-weight: 900;
+  color: #dfb622;
+  margin-bottom: 0.3em;
+  margin-top: 0.3em;
+}
+
+
+
+.btn{
+  font-family: 'Poiret One', cursive;
+  font-size: 0.7em;
+  font-weight: 600;
+  letter-spacing: .1em;
+  border-radius: 1000px;
+  color: white; 
+  text-transform: uppercase;
+  padding: 1rem 2rem; 
+  margin: 1.5em; 
+  background-color:  rgb(179, 119, 119);
+  border-color:  rgb(179, 119, 119);
+}
+
+
+.btn:hover{
+  background-color: rgb(179, 119, 119);
+  border-color:  rgb(179, 119, 119);
+  border-width: 4px;
+}
+
+.form{
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height:2;
+  color: #272343; 
+}
+
+.select{
+  height: 2em;
+  font-family: 'Poiret One', cursive;
+  font-size: large;
+  font-weight: 900;
+}
+  
+
+.column2{
+  display: grid;
+  justify-self: center;
+}
+
+.imgName{
+ font-family: "Sofia", sans-serif;
+ justify-self: center;
+ margin-top: 0.2em;
+ font-size: 2em;
+ font-weight: 500;
+}
+
+ img{
+  border-radius: 4px;
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  height: 550px;
+  border-radius: 10%;
+  border: solid; 
+  border-color: #dfb622;
+ }
+
+ img:hover {
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+  -moz-box-shadow: 0 0 60px #ccc;
+  -webkit-box-shadow: 0 0 60px #ccc;
+  box-shadow: 0 0 60px #ccc;
+}
+
+.date {
+  font-size: 1em;
+  color: #272343;
+  padding-top: 20em;
+  padding-bottom: 3em;
+}
+
+ footer {
+  font-family: "Sofia", sans-serif;
+  font-size: 1em;
+  color: #cbf078;
+  text-align: center;
+  background-color: rgb(179, 119, 119);
+  margin-top: 5em;
+  padding: 0.2em;
+  position: fixed; 
+
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+div.login, div.register
+{
+	border: 0.3em dotted;
+  border-color: #dfb622;
+  border-radius: 10%;
+	height: 17em;
+  top: 16em;
+  width: 30em;		
+	left: 0;
+  right: 0;
+  margin: 0 auto;
+	padding: 6px 3px 6px;
+	position: absolute;
+	text-align: center;
+}
+
+div.register
+{
+	height: 20em;
+}
+
+
+input[type="text"], input[type="password"],
+input[type="email"]
+{
+  width: 17.5em;
+  height: 2em;
+	margin-bottom: 1em;
+}
+
+input[id="confirmPassword"]{
+  margin-bottom: 0.7em;
+}
+
+
+.column3{
+  position: relative;
+  justify-content: center;
+  display: flex;
+  font-size: 1.5em;
+  margin: 2em;
+  padding-left: 0.5em;
+  padding-bottom: 1.7em;
+  padding-top:1em;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color:#3795BD;
+  font-weight: 700;
+  width: 450px;
+  height: 1em;
+  box-shadow: 0 0 60px #ccc;
+}
+
+.column3>.logout {
+  display: none;
+}
+
+.column3:hover>.logout {
+  display: inline;
+  position: relative;
+  top: 0em;
+  left: 1em;
+  font-weight: 900;
+}
+
+.column3:hover>.userCred {
+  display: none;
+}
+
+
+
+/*
+Hidden image button styles
+*/
+
+.image-overlay {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.image-overlay:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+
+.box{
+  display: grid;
+  place-content: center;
+  grid-template-columns: 3fr 2fr;
+}
+
+.photo, .pictures-container, .purchasebtns, .purchasebtns2{
+  display: grid;
+  place-content: center;
+}
+
+.info{
+  display: grid;
+  place-content: left;
+  margin-top: 3em; 
+  margin-left: 3em;
+  font-size: 2em;
+}
+
+
+.order_btn{
+  font-family: 'Poiret One', cursive;
+  font-size: 0.7em;
+  font-weight: 600;
+  letter-spacing: .1em;
+  border-radius: 1000px;
+  color: white; 
+  text-transform: uppercase;
+  padding: 0.5rem 2rem; 
+  margin: 1em; 
+  background-color:  rgb(179, 119, 119);
+  border-color:  rgb(179, 119, 119);
+  width:103%; 
+}
+
+
+.order_btn:hover{
+  background-color: rgb(179, 119, 119);
+  border-color:  rgb(179, 119, 119);
+  border-width: 4px;
+}
+
+#cancel-btn{
+  width: 100%; 
+}

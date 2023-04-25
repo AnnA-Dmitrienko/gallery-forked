@@ -1,0 +1,63 @@
+<!--
+    WEB322 Assignment 3
+    Student name: Anna Dmitrienko 
+    Student ID: 120-412-218
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>order</title>
+     <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="/css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+    {{>header}}
+
+   <div class="pictures-container">
+        <div class="box">
+            <div class="photo">
+                <img src="/images/{{data.filename}}.jpg" alt="{{data.filename}} image" width="350" height="300"/>
+            </div>
+            <div class="info">
+                <p><strong><i>{{data.filename}}</i></strong></p>
+                <p><span style="text-shadow:0em 0em 1.0em #00BFFF, 0em 0em 1.0em  #00BFFF">{{data.description}}</span></p>
+                <p>Price: 💵 <span style="color:#3112bd">{{data.price}}</span> CAD</p>
+                </p>
+                <div class="purchasebtns">
+                        <form action="/backfrompurchase" method="post">
+                            <input type="hidden" name="filename" value="{{data.filename}}.jpg" id="buy-btn">
+                            <button type="submit" class="order_btn" id="buy-btn">Buy</button>
+                        </form>                              
+                        <button type="submit" value="cancel" class="order_btn" id="cancel-btn">Cancel</button> 
+              </div>    
+        </div>   
+    </div>
+    
+    <script>
+        //cancel
+                let cancel_button = document.getElementById("cancel-btn");
+                cancel_button.addEventListener("click", function (event) {
+                alert("Maybe next time");
+                window.history.back();            
+               })
+        //order
+                const form = document.querySelector('form[action="/backfrompurchase"]');
+                const submitBtn = form.querySelector('button[type="submit"]');
+                submitBtn.addEventListener('click', function(event) {
+                event.preventDefault(); 
+                alert('SOLD!!!'); 
+                form.submit(); 
+                });
+    </script>
+        
+    {{>footer}}
+
+</body>
+</html>
