@@ -1,0 +1,89 @@
+<!--
+    WEB322 Assignment 3
+    Student name: Anna Dmitrienko 
+    Student ID: 120-412-218
+
+    Images for this assignment were downloaded from Unsplash.com
+    Photos by "Tengyart" 
+    Free to use under the Unsplash License
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gallery</title>
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+    {{>header}}
+        <div class="row">
+            <div class="column1">
+                <h2> Select from the following pictures:</h2>
+                <form method="POST" action="/" reset="false">
+                    <div class="form">
+                        <select class="select" name="image" id="btn{{this}}" value= "<%= {{this}} %>"">
+                            <option disabled selected value></option>
+                            {{#each data.title}}
+                                <option value="{{this}}">{{this}}</option>
+                                <label for="btn{{this}}"> {{this}}  </label><br>
+                            {{/each}}
+                        </select>
+                        <button type="submit" value="submit" class="btn">Submit</button>              
+                </form>
+            </div>
+            <h3 class="date">SubmissionInfo</h3>
+        </div>
+        
+        <div class="column2">
+            <span class="image">
+                {{#if data.imgName}}
+                <div class="image-container">
+                    <form id="form" action="/order" method="POST">
+                        <input type="hidden" id="image-input" name="image" value="{{data.imgName}}.jpg">
+                    </form>
+                    <img id="image" src="/images/{{data.imgName}}.jpg" alt="{{data.imgName}} image">
+                    <div class="image-overlay"></div>
+                </div>
+                    <p id="demo"></p>
+                {{else}} 
+                    <img src="images/profile.jpg" alt="artist profile image" />
+                {{/if}}
+            </span> 
+            <p class="imgName">
+                {{#if data.imgName}} 
+                    ✨{{data.imgName}}✨ 
+                {{else}} 
+                    ✨Profile✨
+                {{/if}}
+            </p>
+        </div>
+        <div class="column3">
+                <div class="userCred">{{data.credentials}}</div>
+                <div class="logout"><a href='/logout'>Logout</a></div>
+        </div>  
+    
+        
+        <script src="js/cilent.js"></script>
+
+        <script>
+        const image = document.getElementById('image');
+        const form = document.getElementById('form');
+        const imageInput = document.getElementById('image-input');
+
+        image.addEventListener('dblclick', () => {
+        imageInput.value = "{{data.imgName}}.jpg"
+        form.submit();
+        });
+        </script>     
+    {{>footer}}    
+    
+</body>
+</html>

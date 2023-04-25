@@ -1,0 +1,58 @@
+<!--
+    WEB322 Assignment 3
+    Student name: Anna Dmitrienko 
+    Student ID: 120-412-218
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+	 <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+	{{>header}}
+
+	<form method="POST" action="/register" reset="false">
+		<div class="register">
+			<h3>register</h3>
+			<br />
+			{{#if data.emailValue}} 
+            	<input id="userName" name="username" type="email" required placeholder="Email" value={{data.emailValue}} />
+			{{else}} 
+            	<input id="username" name="username" type="email" required placeholder="Email" value=""/>
+            {{/if}}
+			<br />
+			{{#if data.userPass}} 
+            	<input id="password" name="password" type="password" required placeholder="Password" value={{data.userPass}} />
+			{{else}} 
+            	<input id="password" name="password" type="password" required placeholder="Password" value=""/>
+            {{/if}}
+			{{#if data.confirmPassword}} 
+            	<input id="confirmPassword" name="confirmPassword" type="password" required placeholder="Password" value={{data.confirmPassword}} />
+			{{else}} 
+            	<input id="confirmPassword" name="confirmPassword" type="password" required placeholder="Password" value=""/>
+            {{/if}}
+			<br />
+			<label>{{data.duplicateUser}}</label>
+			<label>{{data.invalidPassword}}</label>
+			<label>{{data.matchPassword}}</label>
+			<br />
+			<button type="submit" value="submit" class="btn">Register</button>
+			<br />
+			
+		</div>
+	</form>
+
+	{{>footer}}
+    
+</body>
+</html>
+
+		

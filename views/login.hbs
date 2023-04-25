@@ -1,0 +1,50 @@
+<!--
+    WEB322 Assignment 3
+    Student name: Anna Dmitrienko 
+    Student ID: 120-412-218
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+	 <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+	{{>header}}
+
+	<form  method="POST" action="/">
+		<div class="login">
+			<h3>Login</h3>
+			<br />
+			{{#if data.userValue}} 
+            	<input id="username" name="username" type="text" required placeholder="Username" value={{data.userValue}} />
+			{{else}} 
+            	<input id="username" name="username" type="text" required placeholder="Username" value=""/>
+            {{/if}}
+			<br />
+			{{#if data.userPass}} 
+            	<input id="password" name="password" type="password" required placeholder="Password" value={{data.userPass}} />
+			{{else}} 
+            	<input id="password" name="password" type="password" required placeholder="Password" value=""/>
+            {{/if}}
+			<br />
+			<label>{{data.invalidUser}}</label>
+			<label>{{data.invalidPassword}}</label>
+			<br />
+			<button type="submit" value="submit" class="btn">Submit</button>
+			<br />
+			<a class ="Register" href="/register">Register</a>
+		</div>
+	</form>
+	{{>footer}}
+    
+</body>
+</html>
+
